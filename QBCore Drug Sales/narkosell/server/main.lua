@@ -70,21 +70,24 @@ AddEventHandler('tostdrugs:udanyzakup', function(x, y, z)
 	
 	if xPlayer.Functions.GetItemByName(nazwaNarkotyku1, 1) then
 	
-	TriggerClientEvent('QBCore:Notify', _source, 'You successfully sell Marijuana ' ..wynagrodzenieWeed.. '$')
+	TriggerClientEvent('QBCore:Notify', _source, 'You successfully sell Marijuana '.. '£' ..wynagrodzenieWeed )
 	xPlayer.Functions.RemoveItem(nazwaNarkotyku1, 1)
-	xPlayer.Functions.AddItem('markedbills', wynagrodzenieWeed)
+	--xPlayer.Functions.AddItem('markedbills', wynagrodzenieWeed)
+	xPlayer.Functions.AddMoney('bank', wynagrodzenieWeed)
 	waitingForClient = 0
 	elseif xPlayer.Functions.GetItemByName(nazwaNarkotyku2, 1) then
 	
-	TriggerClientEvent('QBCore:Notify', _source, 'You successfully sell Coke ' ..wynagrodzenieCoke.. '$')
+	TriggerClientEvent('QBCore:Notify', _source, 'You successfully sell Coke '.. '£' ..wynagrodzenieCoke )
 	xPlayer.Functions.RemoveItem(nazwaNarkotyku2, 1)
-	xPlayer.Functions.AddItem('markedbills', wynagrodzenieCoke)
+	xPlayer.Functions.AddMoney('bank', wynagrodzenieCoke)
+	--xPlayer.Functions.AddItem('markedbills', wynagrodzenieCoke)
 	waitingForClient = 0
 	elseif xPlayer.Functions.GetItemByName(nazwaNarkotyku3, 1) then
 	
-	TriggerClientEvent('QBCore:Notify', _source, 'You successfully sell Meth ' ..wynagrodzenieMeth.. '$')
+	TriggerClientEvent('QBCore:Notify', _source, 'You successfully sell Meth '.. '£'..wynagrodzenieMeth )
 	xPlayer.Functions.RemoveItem(nazwaNarkotyku3, 1)
-	xPlayer.Functions.AddItem('markedbills', wynagrodzenieMeth)
+	--xPlayer.Functions.AddItem('markedbills', wynagrodzenieMeth)
+	xPlayer.Functions.AddMoney('bank', wynagrodzenieMeth)
 	waitingForClient = 0
 	else
 	
